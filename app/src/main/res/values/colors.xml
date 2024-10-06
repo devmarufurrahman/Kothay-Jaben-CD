@@ -11,4 +11,5 @@
     <color name="textColor">#7A7A7A</color>
     <color name="red">#bf1c1c</color>
     <color name="red_dark">#B21415</color>
+    <color name="light_gray">#E5EBEE</color>
 </resources>

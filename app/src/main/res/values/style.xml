@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="UpperImgRound">
+        <item name="cornerSizeTopLeft">10dp</item>
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerSizeTopRight">10dp</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+    </style>
+
+    <style name="RoundShapeImg">
+        <item name="cornerSize">10dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="RoundFullImage">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/red</item>
+        <item name="boxBackgroundColor">@color/light_gray</item>
+        <item name="boxCornerRadiusTopStart">20dp</item>
+        <item name="boxCornerRadiusTopEnd">20dp</item>
+        <item name="boxCornerRadiusBottomStart">20dp</item>
+        <item name="boxCornerRadiusBottomEnd">20dp</item>
+        <item name="hintTextAppearance">@style/CustomHintTextAppearance</item>
+    </style>
+
+    <!-- Customize the hint text appearance -->
+    <style name="CustomHintTextAppearance" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+
+</resources>

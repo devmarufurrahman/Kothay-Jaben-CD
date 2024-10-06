@@ -12,6 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/red_dark</item>
         <!-- Customize your theme here. -->
+        <!--        window background color-->
+        <item name="android:windowBackground">@color/white</item>
     </style>
 
     <style name="Theme.KothayJabenCD" parent="Base.Theme.KothayJabenCD" />

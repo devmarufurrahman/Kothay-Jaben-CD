@@ -18,7 +18,7 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true
+        dataBinding = true
     }
 
 
@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.play.services.location)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -59,6 +60,7 @@ dependencies {
     implementation (libs.picasso)
     implementation (libs.rxjava)
     implementation(libs.volley)
-    implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
+    implementation(libs.imageslideshow)
+    implementation(libs.play.services.maps)
 
 }
