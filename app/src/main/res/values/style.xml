@@ -29,6 +29,7 @@
     <!-- Customize the hint text appearance -->
     <style name="CustomHintTextAppearance" parent="TextAppearance.MaterialComponents.Caption">
         <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
 

@@ -27,12 +27,19 @@
     <string name="rider_and_delivery_man">Rider and Delivery man</string>
     <string name="date_of_birth">Date of Birth</string>
     <string name="api_key">AIzaSyA_PNPb417qHMI52Mu2R2k1RDia6TTdiDw</string>
-    <string name="email">email</string>
-    <string name="password">password</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
     <string name="singup">Singup</string>
     <string name="login_msg">Welcome Back!👋 Please log in to access your account.</string>
     <string name="icon">icon</string>
     <string name="continue_agree">By continuing you agree to our <b>User Agreement</b> and acknowledge that you understand the <b>privacy policy</b>.</string>
     <string name="login">Login</string>
     <string name="back">back</string>
+    <string name="sign_up_now_as_a_driver_or_passenger">Sign up now as a driver or passenger! Whether you\'re offering rides or looking for one, join our community and enjoy convenient, affordable travel. Register today and start your journey!</string>
+    <string name="name">Name</string>
+    <string name="contact">Contact (without +88)</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="address">Address</string>
+    <string name="occupation">Occupation</string>
+    <string name="sign_up">SIGN UP</string>
 </resources>

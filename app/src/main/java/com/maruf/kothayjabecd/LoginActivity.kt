@@ -15,12 +15,13 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
         binding.loginBtn.setOnClickListener {
             binding.progressbar.visibility = View.VISIBLE
@@ -37,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.signupButton.setOnClickListener {
-            val intent = Intent(this@LoginActivity, UserOrRiderActivity::class.java)
+            val intent = Intent(this@LoginActivity, UserRegActivity::class.java)
             startActivity(intent)
         }
 
