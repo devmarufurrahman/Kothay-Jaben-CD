@@ -11,42 +11,42 @@
 
 
         <!-- Custom Toolbar -->
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/custom_toolbar"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:title="">
+            android:background="@android:color/transparent"
+            app:elevation="0dp">
 
-            <!-- Back Button -->
-            <ImageButton
-                android:id="@+id/back_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_gravity="start|center_vertical"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/icon_arrow_back"
-                android:contentDescription="@string/back"/>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/custom_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="@string/login"
+                app:titleTextAppearance="@style/Toolbar.TitleText" >
 
-            <!-- Right-Aligned Button -->
-            <Button
-                android:id="@+id/signup_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end|center_vertical"
-                android:backgroundTint="@color/white"
-                android:text="@string/singup"
-                android:textStyle="bold"
-                android:textColor="@color/red"/>
+                <!-- Right-Aligned Button -->
+                <Button
+                    android:id="@+id/signup_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/sign_up"
+                    android:textStyle="bold"
+                    android:textColor="@color/red"/>
 
-        </androidx.appcompat.widget.Toolbar>
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@+id/signUpView"
-            android:layout_below="@+id/custom_toolbar"
+            android:layout_below="@+id/toolbar"
             android:layout_margin="15dp"
             android:layout_marginBottom="323dp"
             android:orientation="vertical">

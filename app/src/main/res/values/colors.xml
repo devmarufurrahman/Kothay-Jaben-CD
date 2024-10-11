@@ -9,8 +9,9 @@
     <color name="gray">#CDCBC8</color>
     <color name="hintColor">#ACACAC</color>
     <color name="textColor">#7A7A7A</color>
-    <color name="red">#bf1c1c</color>
+    <color name="red">#c0392b</color>
     <color name="red_dark">#B21415</color>
+    <color name="red_bg_fade">#ECAEAE</color>
     <color name="light_gray">#E5EBEE</color>
     <color name="textColorHint">#9E9E9E</color>
     <!-- Fully transparent, equivalent to 0x00000000 -->

@@ -15,13 +15,9 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
 
         binding.loginBtn.setOnClickListener {
             binding.progressbar.visibility = View.VISIBLE
@@ -30,6 +26,8 @@ class LoginActivity : AppCompatActivity() {
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 binding.progressbar.visibility = View.GONE
                 Toast.makeText(this, "Login Successfully", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                startActivity(intent)
             } else {
                 binding.progressbar.visibility = View.GONE
                 Toast.makeText(this, "Empty Fields Are not Allowed", Toast.LENGTH_SHORT).show()
