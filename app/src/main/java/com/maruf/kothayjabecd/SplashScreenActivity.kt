@@ -21,7 +21,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             delay(3000)
-            val intent = Intent(this@SplashScreenActivity, LoginActivity::class.java)
+            val intent = Intent(this@SplashScreenActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
         }

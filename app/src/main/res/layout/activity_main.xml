@@ -51,13 +51,62 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <RelativeLayout
+            android:id="@+id/locationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/searchBarCard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingHorizontal="16dp"
+            android:layout_marginVertical="10dp"
+            >
+            <ImageView
+                android:id="@+id/location"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/location_icon"
+                android:layout_alignParentStart="true"
+                android:layout_marginHorizontal="5dp"
+                />
+
+            <TextView
+                android:id="@+id/currentLocationTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/location"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="0dp"
+                android:layout_toStartOf="@+id/imageView"
+                android:layout_alignTop="@+id/location"
+                android:layout_alignBottom="@+id/location"
+                android:gravity="center_vertical"
+                android:text="Dhaka, Bangladesh"
+                android:textColor="@color/gray" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/location"
+                android:layout_alignBottom="@+id/location"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/arrow_right" />
+
+        </RelativeLayout>
+
         <LinearLayout
             android:id="@+id/servicesLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             android:orientation="horizontal"
             android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/searchBarCard">
+            app:layout_constraintTop_toBottomOf="@id/locationView">
 
             <include layout="@layout/service_item"
                 android:id="@+id/bikeService"
@@ -84,35 +133,46 @@
                 android:layout_weight="1"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/servicesLayout">
 
-            <include layout="@layout/action_item"
-                android:id="@+id/paymentAction"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp"/>
 
-            <include layout="@layout/action_item"
-                android:id="@+id/discoverAction"
-                android:layout_width="0dp"
+            <HorizontalScrollView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/servicesLayout"
+                android:layout_marginStart="16dp"
+                android:scrollbars="none"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    >
 
-            <include layout="@layout/action_item"
-                android:id="@+id/pointsAction"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="8dp"/>
-        </LinearLayout>
+                <include layout="@layout/action_item"
+                    android:id="@+id/action1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"/>
+
+                <include layout="@layout/action_item"
+                    android:id="@+id/action2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"/>
+
+                <include layout="@layout/action_item"
+                    android:id="@+id/action3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"/>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -2,6 +2,7 @@ package com.maruf.kothayjabecd
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,12 +18,33 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         try {
             servicesFun()
+            actionFun()
         } catch (e: Exception){
             Log.e("TAG", "onCreate: $e", )
         }
 
+        binding.action1.actionView.setOnClickListener {
+            Toast.makeText(this, "app share", Toast.LENGTH_SHORT).show()
+        }
 
 
+    }
+
+    private fun actionFun() {
+//        action 1 binding
+        binding.action1.actionTitle.text = "Invite Friends"
+        binding.action1.actionSubtitle.text = "Share this app with friends and family for rewards!"
+        binding.action1.actionIcon.setImageResource(R.drawable.invite_icon)
+
+//        action 2 binding
+        binding.action2.actionTitle.text = "Discover"
+        binding.action2.actionSubtitle.text = "Fast and reliable express delivery at your service!"
+        binding.action2.actionIcon.setImageResource(R.drawable.express_delivery)
+
+//        action3Binding
+        binding.action3.actionTitle.text = "Points"
+        binding.action3.actionSubtitle.text = "Earn points and redeem rewards!"
+        binding.action3.actionIcon.setImageResource(R.drawable.points)
 
     }
 
