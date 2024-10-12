@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
+import com.denzcoskun.imageslider.ImageSlider
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import com.maruf.kothayjabecd.databinding.ActivityMainBinding
 import com.maruf.kothayjabecd.databinding.ServiceItemBinding
 
@@ -19,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         try {
             servicesFun()
             actionFun()
+            sliderShow()
         } catch (e: Exception){
             Log.e("TAG", "onCreate: $e", )
         }
@@ -28,6 +32,23 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    private fun sliderShow() {
+        val imageList = ArrayList<SlideModel>() // Create image list
+
+// imageList.add(SlideModel("String Url" or R.drawable)
+// imageList.add(SlideModel("String Url" or R.drawable, "title") You can add title
+
+        imageList.add(SlideModel("https://cdn.grabon.in/gograbon/images/web-images/uploads/1618575517942/food-coupons.jpg" ))
+        imageList.add(SlideModel("https://images.squarespace-cdn.com/content/v1/5a5dbe4632601eb31977f947/1633327221357-NWREEQY82IAW2PFJXUM0/AirAsia_Food_EverydaySale_PR_4Oct-31Oct2021-1200x628_EN.jpg"))
+        imageList.add(SlideModel("https://britishmums.com/dubai/wp-content/uploads/2020/11/GMP-Ads-nov-10-01-05-1276x640.jpg"))
+        imageList.add(SlideModel("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrJ-UUTz8C1RmXsUw8D9ZScere-xbvXWqqkf_VzbmFkTOIZwMA-V-3_43IU-uHjR-OBhQ&usqp=CAU"))
+        imageList.add(SlideModel("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR91P2r6mo3OcUP7qRGPNUpUKv0BEIys2XCTCtJa68BPZFwFhjV6TkvrtsCMPOojsQIvZQ&usqp=CAU"))
+        imageList.add(SlideModel("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmBSGt_OVivn_MBZw7m_qm7ulqetVPxy66zjHTtmvnini0_y9zL9_MjYGKNtCMz8LCmSY&usqp=CAU"))
+
+        val imageSlider = binding.imageSlider
+        imageSlider.setImageList(imageList, ScaleTypes.CENTER_CROP)
     }
 
     private fun actionFun() {
