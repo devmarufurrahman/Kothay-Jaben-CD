@@ -63,4 +63,9 @@ dependencies {
     implementation(libs.imageslideshow)
     implementation(libs.play.services.maps)
 
+//    bottom navigation library
+    implementation (libs.expandablebottombar)
+//    log library
+    implementation (libs.timber)
+
 }
