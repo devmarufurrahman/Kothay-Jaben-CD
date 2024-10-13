@@ -13,6 +13,8 @@ import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.maruf.kothayjabecd.databinding.ActivityMainBinding
 import com.maruf.kothayjabecd.databinding.ServiceItemBinding
+import com.squareup.picasso.Picasso
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -24,12 +26,14 @@ class MainActivity : AppCompatActivity() {
             actionFun()
             sliderShow()
         } catch (e: Exception){
-            Log.e("TAG", "onCreate: $e", )
+            Timber.e("onCreate: $e", )
         }
 
         binding.action1.actionView.setOnClickListener {
             Toast.makeText(this, "app share", Toast.LENGTH_SHORT).show()
         }
+
+        Picasso.get().load("https://www.chefonline.co.uk/images/offerslider03.jpg").placeholder(R.drawable.progress_animation).into(binding.adsImg)
 
 
     }
@@ -37,8 +41,6 @@ class MainActivity : AppCompatActivity() {
     private fun sliderShow() {
         val imageList = ArrayList<SlideModel>() // Create image list
 
-// imageList.add(SlideModel("String Url" or R.drawable)
-// imageList.add(SlideModel("String Url" or R.drawable, "title") You can add title
 
         imageList.add(SlideModel("https://cdn.grabon.in/gograbon/images/web-images/uploads/1618575517942/food-coupons.jpg" ))
         imageList.add(SlideModel("https://images.squarespace-cdn.com/content/v1/5a5dbe4632601eb31977f947/1633327221357-NWREEQY82IAW2PFJXUM0/AirAsia_Food_EverydaySale_PR_4Oct-31Oct2021-1200x628_EN.jpg"))

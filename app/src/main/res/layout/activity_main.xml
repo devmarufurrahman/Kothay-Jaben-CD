@@ -177,17 +177,51 @@
         <com.denzcoskun.imageslider.ImageSlider
             android:id="@+id/image_slider"
             android:layout_width="wrap_content"
-            android:layout_height="200dp"
+            android:layout_height="180dp"
+            android:paddingHorizontal="16dp"
+            android:layout_marginVertical="10dp"
             app:iss_auto_cycle="true"
             app:iss_delay="1000"
             app:iss_period="1500"
-            app:iss_text_align="CENTER"
-            android:layout_marginVertical="10dp"
             app:iss_selected_dot="@drawable/default_selected_dot"
+            app:iss_text_align="CENTER"
             app:iss_unselected_dot="@drawable/default_unselected_dot"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/actionView" />
+
+        <RelativeLayout
+            android:id="@+id/adsView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_slider"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/adsImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/adsImg"
+                android:layout_alignParentStart="true"
+                android:text="@string/ads"
+                android:textSize="12sp"
+                />
+
+        </RelativeLayout>
+
 
 
         <github.com.st235.lib_expandablebottombar.ExpandableBottomBar

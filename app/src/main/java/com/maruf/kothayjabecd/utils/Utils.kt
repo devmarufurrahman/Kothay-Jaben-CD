@@ -4,17 +4,15 @@ import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.app.Activity
 import android.content.Context
-import android.content.Intent
-import android.os.Handler
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ProgressBar
-import android.widget.Toast
-import com.maruf.kothayjabecd.MainActivity
+import androidx.core.content.ContextCompat
 import com.maruf.kothayjabecd.R
-import kotlin.time.Duration
+
 
 object Utils {
     fun buttonAnimation(button: Button, progressBar: ProgressBar, context: Context) {
@@ -73,7 +71,7 @@ object Utils {
     }
 
 
-    fun flashOverlayEffect(flashOverlay: View, rootLayout: View, onAnimationEnd: () -> Unit){
+    fun flashOverlayEffect(flashOverlay: View, context: Context, rootLayout: View, onAnimationEnd: () -> Unit){
 
         flashOverlay.visibility = View.VISIBLE
 
@@ -101,9 +99,11 @@ object Utils {
         animator.addListener(object : android.animation.Animator.AnimatorListener {
 
             override fun onAnimationStart(animation: android.animation.Animator) {
+
             }
 
             override fun onAnimationEnd(animation: android.animation.Animator) {
+                rootLayout.setBackgroundColor(ContextCompat.getColor(context,R.color.red))
              onAnimationEnd()
             }
 
@@ -118,6 +118,18 @@ object Utils {
     fun Int.dpToPx(context: Context): Int {
         return (this * context.resources.displayMetrics.density).toInt()
     }
-    
+
+    fun buttonFocus(btn: Button, error: String) {
+        btn.error = error
+        btn.isFocusable = true
+        btn.isFocusableInTouchMode = true
+        btn.requestFocus()
+    }
+
+
+    fun fieldFocus(field: EditText, error: String) {
+        field.error = error
+        field.requestFocus()
+    }
     
 }

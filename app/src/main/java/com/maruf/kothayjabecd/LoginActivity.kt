@@ -4,6 +4,7 @@ package com.maruf.kothayjabecd
 
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
+import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
 import android.health.connect.datatypes.units.Length
@@ -44,11 +45,11 @@ class LoginActivity : AppCompatActivity() {
                         //Toast.makeText(this, "Login Successfully", Toast.LENGTH_SHORT).show()
 
 
-                        Utils.flashOverlayEffect(binding.flashOverlay, binding.main) {
+                        Utils.flashOverlayEffect(binding.flashOverlay,this, binding.main) {
                             val intent = Intent(this@LoginActivity, MainActivity::class.java)
                             startActivity(intent)
                             finish()
-//                            overridePendingTransition()
+//                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
                         }
                     }
 
@@ -57,14 +58,20 @@ class LoginActivity : AppCompatActivity() {
 
             } else {
                 binding.progressbar.visibility = View.GONE
-                Toast.makeText(this, "Empty Fields Are not Allowed", Toast.LENGTH_SHORT).show()
-                Utils.animateFailure("Login", binding.loginBtn, this)
+
+                if (email.isEmpty()) {
+                    Utils.fieldFocus(binding.emailInput, "Email field cannot be empty")
+                }else if(password.isEmpty()) {
+                    Utils.fieldFocus(binding.passwordInput, "Password field cannot be empty")
+                }
+
             }
         }
 
         binding.signupButton.setOnClickListener {
             val intent = Intent(this@LoginActivity, UserRegActivity::class.java)
-            startActivity(intent)
+            val options = ActivityOptions.makeCustomAnimation(this, R.anim.zoom_in, R.anim.no_anim)
+            startActivity(intent, options.toBundle())
         }
 
 //        binding.forgotPassword.setOnClickListener {

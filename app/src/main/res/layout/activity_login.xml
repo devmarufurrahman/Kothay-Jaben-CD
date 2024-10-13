@@ -23,7 +23,7 @@
                 android:id="@+id/custom_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:title="@string/login"
+                app:title=" "
                 app:titleTextAppearance="@style/Toolbar.TitleText" >
 
                 <!-- Right-Aligned Button -->
@@ -49,18 +49,19 @@
             android:layout_above="@+id/signUpView"
             android:layout_below="@+id/toolbar"
             android:layout_margin="15dp"
+            android:gravity="center_vertical"
             android:layout_marginBottom="323dp"
             android:orientation="vertical">
 
-            <!-- Centered ImageView -->
-            <ImageView
-                android:id="@+id/action_image"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="center"
-                android:scaleType="fitCenter"
-                android:src="@drawable/splash_screen_logo"
-                android:contentDescription="@string/icon"/>
+<!--            &lt;!&ndash; Centered ImageView &ndash;&gt;-->
+<!--            <ImageView-->
+<!--                android:id="@+id/action_image"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="120dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:scaleType="fitCenter"-->
+<!--                android:src="@drawable/splash_screen_logo"-->
+<!--                android:contentDescription="@string/icon"/>-->
 
             <TextView
                 android:layout_width="match_parent"
@@ -85,7 +86,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/email"
-                    android:textSize="16sp"
                     >
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -112,7 +112,8 @@
                     style="@style/CustomTextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/password">
+                    android:hint="@string/password"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/password_input"

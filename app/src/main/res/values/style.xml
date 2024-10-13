@@ -18,12 +18,13 @@
 
     <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="boxStrokeColor">@color/red</item>
-        <item name="boxBackgroundColor">@color/light_gray</item>
+        <item name="boxBackgroundColor">@color/white</item>
         <item name="boxCornerRadiusTopStart">20dp</item>
         <item name="boxCornerRadiusTopEnd">20dp</item>
         <item name="boxCornerRadiusBottomStart">20dp</item>
         <item name="boxCornerRadiusBottomEnd">20dp</item>
         <item name="hintTextAppearance">@style/CustomHintTextAppearance</item>
+        <item name="elevation">8dp</item>
     </style>
 
     <!-- Customize the hint text appearance -->
