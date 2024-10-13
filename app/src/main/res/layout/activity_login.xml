@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".LoginActivity">
+        <!-- Flash overlay view -->
 
 
         <!-- Custom Toolbar -->
@@ -167,26 +168,65 @@
                 android:padding="5dp"
                 />
 
-            <Button
-                android:id="@+id/loginBtn"
+<!--            <Button-->
+<!--                android:id="@+id/loginBtn"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/login"-->
+<!--                android:backgroundTint="@color/red"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:padding="5dp"-->
+<!--                />-->
+
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/login"
-                android:backgroundTint="@color/red"
-                android:textColor="@android:color/white"
-                android:padding="5dp"
-                />
+                android:layout_gravity="center"
+                android:padding="16dp">
+
+                <!-- Button with Text -->
+                <Button
+                    android:id="@+id/loginBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Login"
+                    android:backgroundTint="@color/red"
+                    android:textColor="@android:color/white"
+                    android:padding="10dp" />
+
+                <!-- ProgressBar inside the button -->
+                <ProgressBar
+                    android:id="@+id/progressbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminateTint="@color/white"
+                    android:visibility="gone"
+                    android:layout_gravity="center" />
+
+            </FrameLayout>
+
+
 
         </LinearLayout>
 
-        <ProgressBar
-            android:id="@+id/progressbar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:indeterminateTint="@color/red" />
+<!--        <ProgressBar-->
+<!--            android:id="@+id/progressbar"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:visibility="gone"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:indeterminateTint="@color/red" />-->
+
+
+        <View
+            android:id="@+id/flash_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/overlay_shape"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:layout_gravity="bottom" />
 
     </RelativeLayout>
 
